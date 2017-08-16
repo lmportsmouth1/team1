@@ -5,30 +5,31 @@ var Roman = require('./roman.js');
 
 describe("Fizz Buzz Tests", function () {
     
+    function checkResult(input, expected, testDescription) {
+        console.log("The input was: " + input);
+        var converted = new Roman().convertToRoman(input);
+        console.log("The output is: " + converted);
+        assert(converted==expected, testDescription);
+    }
+    
     it("", function(done) { 
-        var converted = new Roman().convertToRoman(1);
-        assert(converted=='I', "To be implemented");//learning here
+        checkResult(1 ,"I","Should be I");
         done();
     });
     
     it("", function(done) { 
-        var converted = new Roman().convertToRoman(5);
-        assert(converted=='V', "To be implemented");//learning here
+        checkResult(5 ,"V","Should be V");
         done();
     });
     
     it("", function(done) { 
-        var converted = new Roman().convertToRoman(9);
-        assert(converted=='IX', "To be implemented");//learning here
+       checkResult(922 ,"IX","should be IX");
         done();
     });
     
     it("", function(done) {
-        checkResult(40 ,"XL","Should be XL")
+        checkResult(40 ,"XL","Should be XL");
         done();
-    });
-    function checkResult(input,expected,testDescription){
-        console.log("The input was " + input);
-        assert(new Roman().convertToRoman(input)==expected,testDescription)
-    }
+    });0
+    
 });
